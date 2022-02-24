@@ -35,7 +35,8 @@ namespace DoorInterfaceControl.ViewModels
         {
             ShowCommand = new DelegateCommand<object>(ShowForm);
             MinimizeCommand = new DelegateCommand<object>(MinimizeForm);
-
+            
+            // Get user running application and see if they are in HR or IT.  If not close the application 
             if (CheckUserSecurity())
             {
                 WriteLog("Past Security Check").GetAwaiter().GetResult();
@@ -61,6 +62,7 @@ namespace DoorInterfaceControl.ViewModels
 
         private bool CheckUserSecurity()
         {
+            // Getting the current user then checked AD groups and returning true if in IT or HR
             WindowsIdentity identity = WindowsIdentity.GetCurrent();
             WindowsPrincipal principal = new(identity);
             string username = GetUserName(principal.Identity.Name.ToString());
@@ -83,7 +85,7 @@ namespace DoorInterfaceControl.ViewModels
 
                         WriteLog(groupName).GetAwaiter().GetResult();
 
-                        if (groupName is "LEX_Information Systems" or "LEX_Human Resources")
+                        if (groupName is "IT" or "HR")
                         {
                             return true;
                         }
@@ -105,6 +107,7 @@ namespace DoorInterfaceControl.ViewModels
 
         private static DirectoryEntry GetDirEntry()
         {
+            // Getting LDAP information from the app.config file
             DirectoryEntry dirEntry = new();
             dirEntry.Path = ConfigurationManager.AppSettings["LDAPPath"];
             dirEntry.Username = ConfigurationManager.AppSettings["LDAPUsername"];
@@ -116,6 +119,7 @@ namespace DoorInterfaceControl.ViewModels
 
         private static async Task WriteLog(string message)
         {
+            // I created this quick log to diagnose group membership problems.
             using StreamWriter file = new("DoorLog.txt", append: true);
             await file.WriteLineAsync(message + Environment.NewLine);
         }
