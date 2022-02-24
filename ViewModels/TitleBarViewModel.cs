@@ -30,6 +30,7 @@ namespace DoorInterfaceControl.ViewModels
 
         public void RefreshScreen(bool isRefresh)
         {
+            // Publish to the event aggregator so this can call the clearscreen (refresh) function on DoorManagementViewModel
             _eventAggregator.GetEvent<RefreshEvents>().Publish(isRefresh);
         }
 
