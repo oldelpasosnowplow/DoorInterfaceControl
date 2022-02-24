@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<States>
+  <State>
+    <name>admit</name>
+  </State>
+  <State>
+    <name>lockdown</name>
+  </State>
+  <State>
+    <name>schedule</name>
+  </State>
+  <State>
+    <name>unlock</name>
+  </State>
+</States>

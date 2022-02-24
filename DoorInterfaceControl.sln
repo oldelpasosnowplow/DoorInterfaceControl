@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32106.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoorInterfaceControl", "DoorInterfaceControl.csproj", "{AABBD8AB-F2F5-4292-A82E-C6FA41B13AE2}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "DICInstaller", "DICInstaller\DICInstaller.vdproj", "{04CDE808-470F-41E0-908C-B61DDB3B7AD0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AABBD8AB-F2F5-4292-A82E-C6FA41B13AE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AABBD8AB-F2F5-4292-A82E-C6FA41B13AE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AABBD8AB-F2F5-4292-A82E-C6FA41B13AE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AABBD8AB-F2F5-4292-A82E-C6FA41B13AE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04CDE808-470F-41E0-908C-B61DDB3B7AD0}.Debug|Any CPU.ActiveCfg = Debug
+		{04CDE808-470F-41E0-908C-B61DDB3B7AD0}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5E75E0C0-3804-4E79-A1EC-2FC6FC9906C4}
+	EndGlobalSection
+EndGlobal
