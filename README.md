@@ -14,7 +14,7 @@ when a schedule is published.
 
 I have locked it down to AD groups that match either IT or HR.  That way only people that control the Door system can use this application. 
 
-This door is build on MVVM model using Prism (https://github.com/PrismLibrary/Prism).    
+This application is build on MVVM model using [Prism](https://github.com/PrismLibrary/Prism "Prism Library").    
 It will require Prism to be added to your programming environment.  
 
 Feel free to take the code and modify it to fit your needs.  All I ask is give me credit and point people
