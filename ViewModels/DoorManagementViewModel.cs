@@ -167,6 +167,7 @@ namespace DoorInterfaceControl.ViewModels
 
         private static void RunAsync()
         {
+            // This setup the client to connect to the server to make API calls
             client.BaseAddress = new Uri(ConfigurationManager.AppSettings["APIWebURL"].ToString());
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
@@ -177,6 +178,7 @@ namespace DoorInterfaceControl.ViewModels
 
         private async Task GetDoorList()
         {
+            // Calls API to grab all the doors in the system
             HttpResponseMessage response = await client.GetAsync("api/v1/accesspoints/").ConfigureAwait(false);
             if (response.IsSuccessStatusCode)
             {
@@ -200,6 +202,7 @@ namespace DoorInterfaceControl.ViewModels
         
         private void ReadXML()
         {
+            // I created an XML file for the doors states just in case they need to be modified so it doesn't have to be done in code
             StateList.Clear();
             XDocument xml = XDocument.Load(ConfigurationManager.AppSettings["DoorStateXML"].ToString());
             IEnumerable<XElement> query = from x in xml.Root.Descendants("State") select x;
